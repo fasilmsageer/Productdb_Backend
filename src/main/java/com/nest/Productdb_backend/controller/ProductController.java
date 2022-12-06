@@ -17,7 +17,7 @@ public class ProductController {
     private ProductDao dao;
 
     @CrossOrigin(origins = "*")
-    @PostMapping(path = "/add", consumes = "application/json", produces = "application/json")
+    @PostMapping(path = "/addproduct", consumes = "application/json", produces = "application/json")
     public String addproduct(@RequestBody Product p){
         System.out.println(p.getProductcode().toString());
         System.out.println(p.getProductname().toString());
@@ -28,7 +28,7 @@ public class ProductController {
         return "Product added Successfully";
     }
     @CrossOrigin(origins = "*")
-    @GetMapping("/viewall")
+    @GetMapping("/viewproduct")
     public List<Product>viewAll(){
         return (List<Product>) dao.findAll();
     }
